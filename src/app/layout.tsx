@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://relocateraleigh.com'),
   title: "Relocate Raleigh | The Tech Relocation Guide",
   description: "Keep your tech career. Upgrade your life. A local insider's guide to Raleigh-Durham for West Coast tech families.",
   openGraph: {
