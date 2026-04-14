@@ -73,21 +73,27 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-10 bg-zinc-900/50 rounded-[2.5rem] border border-zinc-800/50 hover:border-blue-500/30 transition-all group">
-              <div className="text-5xl mb-8 group-hover:scale-110 transition-transform origin-left">🇹🇼</div>
+              <div className="w-12 h-12 mb-8 group-hover:scale-110 transition-transform origin-left rounded-lg overflow-hidden border border-zinc-800">
+                <img src="https://flagcdn.com/tw.svg" alt="Taiwan Flag" className="w-full h-full object-cover" />
+              </div>
               <h3 className="text-2xl font-black mb-4 text-white">繁體中文支持</h3>
               <p className="text-zinc-500 font-medium leading-relaxed">
                 We help Taiwanese families find the best Chinese schools and communities in Cary and Raleigh.
               </p>
             </div>
             <div className="p-10 bg-zinc-900/50 rounded-[2.5rem] border border-zinc-800/50 hover:border-blue-500/30 transition-all group">
-              <div className="text-5xl mb-8 group-hover:scale-110 transition-transform origin-left">🇷🇺</div>
-              <h3 className="text-2xl font-black mb-4 text-white">Русская поддержка</h3>
+              <div className="w-12 h-12 mb-8 group-hover:scale-110 transition-transform origin-left rounded-lg overflow-hidden border border-zinc-800">
+                <img src="https://flagcdn.com/ru.svg" alt="Russian Flag" className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-white">Русская підтримка</h3>
               <p className="text-zinc-500 font-medium leading-relaxed">
                 Slavic community roots are deep here. We'll connect you with the best markets and social circles.
               </p>
             </div>
             <div className="p-10 bg-zinc-900/50 rounded-[2.5rem] border border-zinc-800/50 hover:border-blue-500/30 transition-all group">
-              <div className="text-5xl mb-8 group-hover:scale-110 transition-transform origin-left">🇺🇦</div>
+              <div className="w-12 h-12 mb-8 group-hover:scale-110 transition-transform origin-left rounded-lg overflow-hidden border border-zinc-800">
+                <img src="https://flagcdn.com/ua.svg" alt="Ukrainian Flag" className="w-full h-full object-cover" />
+              </div>
               <h3 className="text-2xl font-black mb-4 text-white">Українська підтримка</h3>
               <p className="text-zinc-500 font-medium leading-relaxed">
                 We assist Ukrainian families in navigating the local landscape and finding welcoming neighborhoods.
