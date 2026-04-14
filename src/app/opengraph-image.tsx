@@ -12,105 +12,92 @@ export const size = {
 
 export const contentType = 'image/png';
 
-export default async function Image() {
+export default function OgImage() {
   return new ImageResponse(
     (
-      // ImageResponse JSX
       <div
         style={{
-          fontSize: 128,
-          background: 'black',
-          width: '100%',
           height: '100%',
+          width: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: 'sans-serif',
+          backgroundColor: '#000',
           position: 'relative',
         }}
       >
-        {/* Background Accent */}
         <div 
           style={{
             position: 'absolute',
-            top: -200,
-            right: -200,
-            width: 600,
-            height: 600,
-            background: 'rgba(37, 99, 235, 0.15)',
-            borderRadius: '50%',
-            filter: 'blur(100px)',
+            top: -100,
+            right: -100,
+            width: 400,
+            height: 400,
+            background: 'rgba(37, 99, 235, 0.2)',
+            borderRadius: '100%',
+            filter: 'blur(50px)',
           }}
         />
         
-        {/* Content Container */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-          {/* Logo */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
           <div
             style={{
-              width: 120,
-              height: 120,
-              background: '#2563eb',
-              borderRadius: 30,
+              width: 100,
+              height: 100,
+              backgroundColor: '#2563eb',
+              borderRadius: 24,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: 'white',
-              fontSize: 80,
+              fontSize: 64,
               fontWeight: 900,
-              marginBottom: 40,
-              boxShadow: '0 20px 50px rgba(37, 99, 235, 0.3)',
+              marginBottom: 32,
             }}
           >
             R
           </div>
           
-          {/* Main Title */}
           <div
             style={{
-              fontSize: 80,
+              fontSize: 72,
               fontWeight: 900,
               color: 'white',
-              letterSpacing: '-0.05em',
-              lineHeight: 1,
-              marginBottom: 20,
+              marginBottom: 16,
               display: 'flex',
               alignItems: 'center',
-              gap: 15
+              gap: 12
             }}
           >
             Relocate <span style={{ color: '#2563eb' }}>Raleigh</span>
           </div>
 
-          {/* Subtitle / Tagline */}
           <div
             style={{
-              fontSize: 32,
+              fontSize: 28,
               fontWeight: 600,
               color: '#71717a',
               letterSpacing: '0.05em',
               textTransform: 'uppercase',
             }}
           >
-            Keep your career. <span style={{ color: 'white', margin: '0 10px' }}>·</span> Upgrade your life.
+            Keep your career. · Upgrade your life.
           </div>
         </div>
 
-        {/* Bottom Bar Indicator */}
         <div 
           style={{
             position: 'absolute',
             bottom: 0,
             left: 0,
             right: 0,
-            height: 12,
-            background: '#2563eb',
+            height: 8,
+            backgroundColor: '#2563eb',
           }}
         />
       </div>
     ),
-    // ImageResponse options
     {
       ...size,
     }
