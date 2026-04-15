@@ -62,41 +62,26 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Multilingual Support Section */}
+      {/* Community fit — inclusive, equal professional service */}
       <section id="community" className="bg-zinc-950 py-32 px-6 border-y border-zinc-900">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl mb-20">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-white leading-tight">Built for a Global <br />Community</h2>
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-white leading-tight">
+              Finding the Right Fit <br />
+              for Your Family
+            </h2>
             <p className="text-xl text-zinc-500 leading-relaxed font-medium">
-              Moving is hard. Moving with a family is harder. We provide support in your native language to ensure your family settles in smoothly.
+              Moving is hard. Moving with a family is harder. We help you weigh what matters—not only the home, but schools, commute, and the community around it.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-10 bg-zinc-900/50 rounded-[2.5rem] border border-zinc-800/50 hover:border-blue-500/30 transition-all group">
-              <div className="w-12 h-12 mb-8 group-hover:scale-110 transition-transform origin-left rounded-lg overflow-hidden border border-zinc-800">
-                <img src="https://flagcdn.com/tw.svg" alt="Taiwan Flag" className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-2xl font-black mb-4 text-white">繁體中文支持</h3>
-              <p className="text-zinc-500 font-medium leading-relaxed">
-                We help Taiwanese families find the best Chinese schools and communities in Cary and Raleigh.
+          <div className="max-w-4xl p-10 md:p-12 bg-zinc-900/50 rounded-[2.5rem] border border-zinc-800/50">
+            <div className="space-y-6 text-zinc-400 text-lg leading-relaxed font-medium">
+              <p>
+                Every household is different. In our work together, we focus on{" "}
+                <span className="text-zinc-300">your</span> stated priorities—whether that includes schools, commute, faith communities, cultural connections, or access to services and amenities that support how your family lives day to day. We provide the same professional service to every client, guided by what you tell us you need.
               </p>
-            </div>
-            <div className="p-10 bg-zinc-900/50 rounded-[2.5rem] border border-zinc-800/50 hover:border-blue-500/30 transition-all group">
-              <div className="w-12 h-12 mb-8 group-hover:scale-110 transition-transform origin-left rounded-lg overflow-hidden border border-zinc-800">
-                <img src="https://flagcdn.com/ru.svg" alt="Russian Flag" className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-2xl font-black mb-4 text-white">Русская підтримка</h3>
-              <p className="text-zinc-500 font-medium leading-relaxed">
-                Slavic community roots are deep here. We'll connect you with the best markets and social circles.
-              </p>
-            </div>
-            <div className="p-10 bg-zinc-900/50 rounded-[2.5rem] border border-zinc-800/50 hover:border-blue-500/30 transition-all group">
-              <div className="w-12 h-12 mb-8 group-hover:scale-110 transition-transform origin-left rounded-lg overflow-hidden border border-zinc-800">
-                <img src="https://flagcdn.com/ua.svg" alt="Ukrainian Flag" className="w-full h-full object-cover" />
-              </div>
-              <h3 className="text-2xl font-black mb-4 text-white">Українська підтримка</h3>
-              <p className="text-zinc-500 font-medium leading-relaxed">
-                We assist Ukrainian families in navigating the local landscape and finding welcoming neighborhoods.
+              <p>
+                Complimentary consultations include a structured conversation about your goals and practical, objective information about the Triangle—so you can compare areas, understand what is near each option, and choose a location that balances convenience and quality of life for your situation.
               </p>
             </div>
           </div>
