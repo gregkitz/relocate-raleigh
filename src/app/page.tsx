@@ -16,7 +16,7 @@ export default function Home() {
           <a href="#calculator" className="hover:text-white transition-colors">The Math</a>
           <a href="#community" className="hover:text-white transition-colors">Community</a>
           <a href="#infrastructure" className="hover:text-white transition-colors">Infrastructure</a>
-          <a href="#guide" className="hover:text-white transition-colors">About Nick</a>
+          <a href="#guide" className="hover:text-white transition-colors">About us</a>
           <button className="bg-white text-black px-6 py-2.5 rounded-full hover:bg-zinc-200 transition-all font-bold">
             Get The Guide
           </button>

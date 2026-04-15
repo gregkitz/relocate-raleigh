@@ -19,11 +19,15 @@ export default function NickBio() {
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                  Senior IT Professional @ Cisco
+                  Senior IT Professional
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                  Bilingual: English, Russian/Ukrainian
+                  Medical Professional
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  Bilingual: English, Russian/Ukrainian, Mandarin
                 </li>
               </ul>
             </div>
@@ -45,7 +49,7 @@ export default function NickBio() {
                 As a senior IT professional at a major tech company here in the Research Triangle, I know exactly what you're weighing. I made the cross-country relocation myself, navigating the complexities of finding the right community while balancing a high-growth tech career.
               </p>
               <p>
-                I don't just sell houses; I help tech families land in a community. My household is a linguistic melting pot—I speak English and Russian/Ukrainian, and we're raising our kids in a home that also speaks Mandarin. I understand the cultural and educational priorities that matter most to international tech talent.
+                My wife and I run this business together—we don't just sell houses; we help tech families land in a community. Our household is a linguistic melting pot—I speak English and Russian/Ukrainian, and we're raising our kids in a home that also speaks Mandarin. We understand the cultural and educational priorities that matter most to international tech talent.
               </p>
               <p className="text-zinc-500 italic text-base">
                 Looking for an unvarnished take on Raleigh life? Let's connect.
