@@ -2,6 +2,7 @@ import Image from "next/image";
 import Calculator from "@/components/Calculator";
 import NickBio from "@/components/NickBio";
 import CommuteMap from "@/components/CommuteMap";
+import ModalTriggerButton from "@/components/ModalTriggerButton";
 
 export default function Home() {
   return (
@@ -17,9 +18,12 @@ export default function Home() {
           <a href="#community" className="hover:text-white transition-colors">Community</a>
           <a href="#infrastructure" className="hover:text-white transition-colors">Infrastructure</a>
           <a href="#guide" className="hover:text-white transition-colors">About us</a>
-          <button className="bg-white text-black px-6 py-2.5 rounded-full hover:bg-zinc-200 transition-all font-bold">
+          <ModalTriggerButton
+            variant="guide"
+            className="bg-white text-black px-6 py-2.5 rounded-full hover:bg-zinc-200 transition-all font-bold"
+          >
             Get The Guide
-          </button>
+          </ModalTriggerButton>
         </div>
       </nav>
 
@@ -40,9 +44,12 @@ export default function Home() {
             Raleigh-Durham offers top-tier hybrid roles, half the cost of living, and the best public schools in the South. Let a local tech-insider help you navigate the move.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4">
-            <button className="w-full sm:w-auto px-10 py-5 bg-blue-600 text-white rounded-full font-black text-lg hover:bg-blue-700 transition-all shadow-2xl shadow-blue-500/20">
+            <ModalTriggerButton
+              variant="guide"
+              className="w-full sm:w-auto px-10 py-5 bg-blue-600 text-white rounded-full font-black text-lg hover:bg-blue-700 transition-all shadow-2xl shadow-blue-500/20"
+            >
               Relocation Guide (PDF)
-            </button>
+            </ModalTriggerButton>
             <div className="flex items-center gap-4">
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4].map((i) => (

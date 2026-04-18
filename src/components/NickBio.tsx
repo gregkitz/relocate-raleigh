@@ -1,4 +1,5 @@
 import React from 'react';
+import ModalTriggerButton from './ModalTriggerButton';
 
 export default function NickBio() {
   return (
@@ -57,9 +58,12 @@ export default function NickBio() {
             </div>
 
             <div className="pt-8">
-              <button className="px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:bg-zinc-200 transition-all shadow-xl shadow-white/5">
+              <ModalTriggerButton
+                variant="contact"
+                className="px-10 py-5 bg-white text-black rounded-full font-bold text-lg hover:bg-zinc-200 transition-all shadow-xl shadow-white/5"
+              >
                 Get In Touch with Nick
-              </button>
+              </ModalTriggerButton>
             </div>
           </div>
         </div>
