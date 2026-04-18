@@ -1,0 +1,154 @@
+/* Styling for the Relocate Raleigh PDF guide.
+ * Applied by md-to-pdf via the --stylesheet flag.
+ * Targets Letter format with 20mm margins.
+ */
+
+:root {
+  --text: #1a1a1a;
+  --muted: #555;
+  --accent: #1d4ed8;
+  --rule: #e5e7eb;
+  --code-bg: #f4f4f5;
+  --table-header: #f4f4f5;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.55;
+  color: var(--text);
+  max-width: none;
+}
+
+h1 {
+  font-size: 28pt;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 0.25em;
+  page-break-after: avoid;
+}
+
+h2 {
+  font-size: 18pt;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.25em;
+  border-bottom: 2px solid var(--accent);
+  page-break-after: avoid;
+}
+
+h3 {
+  font-size: 13pt;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  color: var(--text);
+  page-break-after: avoid;
+}
+
+h4 {
+  font-size: 11pt;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}
+
+p {
+  margin: 0.6em 0;
+}
+
+ul, ol {
+  margin: 0.5em 0;
+  padding-left: 1.4em;
+}
+
+li {
+  margin: 0.25em 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--accent);
+}
+
+blockquote {
+  margin: 1em 0;
+  padding: 0.6em 1em;
+  border-left: 3px solid var(--accent);
+  background: #f8fafc;
+  color: var(--muted);
+  font-size: 10pt;
+}
+
+blockquote p {
+  margin: 0.3em 0;
+}
+
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.9em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2em 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid var(--rule);
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: var(--table-header);
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* Table of Contents styling — make the nav feel distinct */
+h2 + ol {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: toc;
+}
+
+h2 + ol > li {
+  counter-increment: toc;
+  padding: 0.4em 0;
+  border-bottom: 1px dotted var(--rule);
+}
+
+h2 + ol > li::before {
+  content: "Chapter " counter(toc) " — ";
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Keep headings with their content where possible */
+h2, h3, h4 {
+  page-break-after: avoid;
+}
+
+/* Don't split tables or blockquotes across pages if avoidable */
+blockquote {
+  page-break-inside: avoid;
+}

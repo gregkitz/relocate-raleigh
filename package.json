@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build-pdf": "md-to-pdf content/relocation-guide.md --pdf-options '{\"format\":\"Letter\",\"margin\":\"20mm\",\"printBackground\":true}' --stylesheet content/guide-style.css"
   },
   "dependencies": {
     "next": "16.2.3",
@@ -22,6 +23,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "md-to-pdf": "^5.2.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

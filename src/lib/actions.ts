@@ -1,10 +1,23 @@
 'use server'
 
+import { readFile } from 'node:fs/promises'
+import path from 'node:path'
 import { Resend } from 'resend'
 import { z } from 'zod'
 
 const DEST = 'team@relocateraleigh.com'
 const FROM = 'Relocate Raleigh <team@relocateraleigh.com>'
+const GUIDE_PDF_PATH = path.join(process.cwd(), 'content', 'relocation-guide.pdf')
+const GUIDE_PDF_FILENAME = 'Relocate-Raleigh-Guide.pdf'
+
+async function loadGuidePdf(): Promise<Buffer | null> {
+  try {
+    return await readFile(GUIDE_PDF_PATH)
+  } catch (err) {
+    console.error('Guide PDF not found at', GUIDE_PDF_PATH, err)
+    return null
+  }
+}
 
 const guideSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100),
@@ -53,6 +66,7 @@ export async function submitGuideRequest(
 
   const { name, email, origin } = parsed.data
   const resend = getClient()
+  const pdfBuffer = await loadGuidePdf()
 
   try {
     await resend.emails.send({
@@ -69,24 +83,37 @@ export async function submitGuideRequest(
         .join('\n'),
     })
 
-    // PDF delivery is stubbed until the guide is finalized — send a
-    // confirmation so the visitor knows the request landed.
-    await resend.emails.send({
+    const visitorEmail = {
       from: FROM,
       to: email,
       replyTo: DEST,
-      subject: 'Your Relocate Raleigh Guide is on the way',
+      subject: 'Your Relocate Raleigh Guide',
       text:
         `Hi ${name},\n\n` +
-        `Thanks for requesting the Relocate Raleigh Guide. We're putting the ` +
-        `finishing touches on the latest edition and will email you the PDF ` +
-        `within the next few days.\n\n` +
-        `In the meantime, reply to this email with any questions about the ` +
-        `move — we read every response.\n\n` +
+        (pdfBuffer
+          ? `Your Relocate Raleigh Guide is attached as a PDF — 8 chapters plus checklists, written by a local who made the move himself.\n\n`
+          : `Thanks for requesting the Relocate Raleigh Guide. We'll email the PDF shortly.\n\n`) +
+        `Reply to this email with any questions about the move — we read every response.\n\n` +
         `— The Relocate Raleigh team`,
-    })
+      ...(pdfBuffer
+        ? {
+            attachments: [
+              {
+                filename: GUIDE_PDF_FILENAME,
+                content: pdfBuffer,
+              },
+            ],
+          }
+        : {}),
+    }
 
-    return initialStateOk("Check your inbox — we just sent you a confirmation.")
+    await resend.emails.send(visitorEmail)
+
+    return initialStateOk(
+      pdfBuffer
+        ? 'Check your inbox — the guide is on its way.'
+        : "Check your inbox — we just sent you a confirmation.",
+    )
   } catch (err) {
     console.error('submitGuideRequest failed:', err)
     return initialStateErr('Something went wrong sending your request. Please try again.')
