@@ -99,38 +99,34 @@ async function main() {
 
   const userPrompt = `Research and submit ${8}–${10} upcoming Triangle-area events between ${today} and ${horizonDate}. Use web search to verify each one before including it.`
 
-  let response = await client.messages.create({
-    model: 'claude-opus-4-7',
+  // Streaming avoids the SDK's default 10-minute HTTP timeout for long-running
+  // tool-use calls. .finalMessage() resolves to the same shape as a non-streamed
+  // response.
+  const baseParams = {
+    model: 'claude-sonnet-4-6',
     max_tokens: 16000,
     thinking: { type: 'adaptive' },
-    output_config: { effort: 'xhigh' },
     system: SYSTEM_PROMPT,
     tools: [
       { type: 'web_search_20260209', name: 'web_search' },
       submitEventsTool,
     ],
-    messages: [{ role: 'user', content: userPrompt }],
-  })
+  }
+
+  const messages = [{ role: 'user', content: userPrompt }]
+  console.log('Starting research with web_search...')
+
+  let response = await client.messages.stream({ ...baseParams, messages }).finalMessage()
+  console.log(`Initial pass done: stop_reason=${response.stop_reason}`)
 
   // The web_search tool runs server-side. If it hits its iteration cap before
   // Claude calls submit_events, the API returns stop_reason="pause_turn" and
   // expects us to re-send the assistant turn so it can continue.
-  const messages = [{ role: 'user', content: userPrompt }]
   let safetyCounter = 0
   while (response.stop_reason === 'pause_turn' && safetyCounter < 3) {
+    console.log(`pause_turn — continuing (round ${safetyCounter + 1})...`)
     messages.push({ role: 'assistant', content: response.content })
-    response = await client.messages.create({
-      model: 'claude-opus-4-7',
-      max_tokens: 16000,
-      thinking: { type: 'adaptive' },
-      output_config: { effort: 'xhigh' },
-      system: SYSTEM_PROMPT,
-      tools: [
-        { type: 'web_search_20260209', name: 'web_search' },
-        submitEventsTool,
-      ],
-      messages,
-    })
+    response = await client.messages.stream({ ...baseParams, messages }).finalMessage()
     safetyCounter += 1
   }
 
