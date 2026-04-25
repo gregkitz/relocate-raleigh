@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Calculator from "@/components/Calculator";
 import NickBio from "@/components/NickBio";
 import CommuteMap from "@/components/CommuteMap";
@@ -143,9 +144,9 @@ export default function Home() {
                 Our AI-curated calendar finds the most relevant cultural and tech events in the Triangle.
               </p>
             </div>
-            <button className="px-10 py-5 bg-white text-blue-600 rounded-full font-black text-lg hover:bg-blue-50 transition-all shadow-xl shadow-black/10 whitespace-nowrap">
+            <Link href="/events" className="px-10 py-5 bg-white text-blue-600 rounded-full font-black text-lg hover:bg-blue-50 transition-all shadow-xl shadow-black/10 whitespace-nowrap">
               View Full Calendar
-            </button>
+            </Link>
           </div>
           
           {upcomingEvents.length > 0 ? (

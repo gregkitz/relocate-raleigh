@@ -37,3 +37,17 @@ export function getUpcomingEvents(limit = 3, now: Date = new Date()): CalendarEv
     .sort((a, b) => a.date.localeCompare(b.date))
     .slice(0, limit)
 }
+
+export function getAllUpcomingEvents(now: Date = new Date()): CalendarEvent[] {
+  const today = now.toISOString().slice(0, 10)
+  return (eventsData.events as CalendarEvent[])
+    .filter((e) => e.date >= today)
+    .sort((a, b) => a.date.localeCompare(b.date))
+}
+
+export function formatMonthLabel(yearMonth: string): string {
+  const [year, month] = yearMonth.split('-').map(Number)
+  if (!year || !month) return yearMonth
+  const date = new Date(year, month - 1, 1)
+  return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })
+}
