@@ -95,7 +95,11 @@ async function main() {
     throw new Error('ANTHROPIC_API_KEY is not set')
   }
 
-  const client = new Anthropic()
+  // maxRetries: 0 disables the SDK's automatic retry on timeouts and 5xx
+  // errors. Each retry triggers a full new model run that we still get billed
+  // for, even when the response never makes it back. With retries off, a
+  // failure surfaces immediately and we don't burn credits on phantom runs.
+  const client = new Anthropic({ maxRetries: 0 })
 
   const userPrompt = `Research and submit ${8}–${10} upcoming Triangle-area events between ${today} and ${horizonDate}. Use web search to verify each one before including it.`
 
@@ -108,7 +112,9 @@ async function main() {
     thinking: { type: 'adaptive' },
     system: SYSTEM_PROMPT,
     tools: [
-      { type: 'web_search_20260209', name: 'web_search' },
+      // max_uses caps server-side web searches per request. Each search costs
+      // tokens (results feed back into context) plus a per-search fee.
+      { type: 'web_search_20260209', name: 'web_search', max_uses: 8 },
       submitEventsTool,
     ],
   }
