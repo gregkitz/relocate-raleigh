@@ -12,7 +12,7 @@ export default function NickBio() {
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
             </div>
             <div className="p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800">
-              <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4">Credentials</p>
+              <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4">Team Credentials</p>
               <ul className="space-y-2 text-sm text-zinc-400 font-medium">
                 <li className="flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>

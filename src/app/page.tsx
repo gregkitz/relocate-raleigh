@@ -1,13 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
 import Calculator from "@/components/Calculator";
 import NickBio from "@/components/NickBio";
 import CommuteMap from "@/components/CommuteMap";
 import ModalTriggerButton from "@/components/ModalTriggerButton";
-import { getUpcomingEvents, formatDateLabel } from "@/data/events";
+import TriangleEventsSection from "@/components/TriangleEventsSection";
 
 export default function Home() {
-  const upcomingEvents = getUpcomingEvents(3);
   return (
     <div className="min-h-screen bg-black font-sans text-zinc-50 selection:bg-blue-500/30">
       {/* Navigation */}
@@ -133,48 +131,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Events Section */}
-      <section className="bg-blue-600 py-32 px-6 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[120px] -mr-48 -mt-48"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-            <div className="text-left max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">Upcoming Events</h2>
-              <p className="text-blue-100 text-xl font-medium leading-relaxed">
-                Our AI-curated calendar finds the most relevant cultural and tech events in the Triangle.
-              </p>
-            </div>
-            <Link href="/events" className="px-10 py-5 bg-white text-blue-600 rounded-full font-black text-lg hover:bg-blue-50 transition-all shadow-xl shadow-black/10 whitespace-nowrap">
-              View Full Calendar
-            </Link>
-          </div>
-          
-          {upcomingEvents.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {upcomingEvents.map((event) => (
-                <a
-                  key={`${event.date}-${event.title}`}
-                  href={event.url ?? undefined}
-                  target={event.url ? "_blank" : undefined}
-                  rel={event.url ? "noopener noreferrer" : undefined}
-                  className="p-8 bg-white/10 rounded-3xl border border-white/20 backdrop-blur-md hover:bg-white/20 transition-all cursor-pointer block"
-                >
-                  <div className="text-blue-200 text-xs font-black mb-3 uppercase tracking-[0.2em]">{formatDateLabel(event.date)}</div>
-                  <h4 className="text-2xl font-black mb-6 leading-tight">{event.title}</h4>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-blue-100 font-bold tracking-tight">📍 {event.location}</span>
-                    <span className="px-3 py-1 bg-white/20 rounded-lg text-[10px] font-black uppercase tracking-widest">{event.category}</span>
-                  </div>
-                </a>
-              ))}
-            </div>
-          ) : (
-            <p className="text-blue-100 text-lg font-medium">
-              The calendar refreshes weekly — check back Monday for the next set of events.
-            </p>
-          )}
-        </div>
-      </section>
+      <TriangleEventsSection />
 
       <NickBio />
 
