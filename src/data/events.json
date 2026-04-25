@@ -1,61 +1,69 @@
 {
-  "generatedAt": "2026-04-25T13:00:00Z",
+  "generatedAt": "2026-04-25T20:25:39.974Z",
   "events": [
     {
-      "title": "First Friday Raleigh",
-      "date": "2026-05-01",
-      "location": "Downtown Raleigh",
-      "category": "Cultural",
-      "url": null,
-      "summary": "Monthly art walk and gallery night across downtown Raleigh — a low-key way to meet locals and see the arts scene."
+      "title": "Triangle Pop-Up at Raleigh Iron Works",
+      "date": "2026-05-09",
+      "location": "Raleigh Iron Works, Raleigh",
+      "category": "Family",
+      "url": "https://www.trianglepopup.com/events",
+      "summary": "A monthly pop-up market on the second Saturday of each month featuring a rotating roster of local makers, artisans, and live music from 11 a.m. to 4 p.m. A low-key, all-ages way to discover local makers and the Raleigh creative community in a converted industrial space."
     },
     {
-      "title": "TechFest North Carolina",
-      "date": "2026-05-13",
-      "location": "Raleigh Convention Center",
-      "category": "Tech",
-      "url": null,
-      "summary": "Two-day regional tech conference covering software, AI, and infrastructure — strong RTP networking surface."
+      "title": "Live After 5 Outdoor Concert Series",
+      "date": "2026-05-14",
+      "location": "Moore Square / Raleigh Union Station / Seaboard Station, Raleigh",
+      "category": "Outdoor",
+      "url": "https://triangleonthecheap.com/free-outdoor-summer-concerts-triangle/",
+      "summary": "Free weekly outdoor concerts held six Thursdays from May 14 through August 13, 2026, starting at 7 p.m. at rotating downtown Raleigh venues. A great no-cost way to experience Raleigh's walkable downtown neighborhoods and hear live music with neighbors."
+    },
+    {
+      "title": "Got to Be NC Festival",
+      "date": "2026-05-15",
+      "location": "NC State Fairgrounds, Raleigh",
+      "category": "Cultural",
+      "url": "https://triangleonthecheap.com/got-nc-festival/",
+      "summary": "A free, three-day (May 15–17) celebration of North Carolina food, agriculture, music, and culture held at the State Fairgrounds, with activities for all ages across multiple stages and pavilions. It's one of the best single events for newcomers to taste what makes the state tick."
     },
     {
       "title": "Bimbé Cultural Arts Festival",
       "date": "2026-05-16",
-      "location": "Durham Central Park",
+      "location": "Rock Quarry Park, Durham",
       "category": "Cultural",
-      "url": null,
-      "summary": "Annual celebration of African and African-American arts, music, and food in downtown Durham."
+      "url": "https://www.dprplaymore.org/281/Bimbe-Cultural-Arts-Festival",
+      "summary": "Now in its 56th year, this free Durham Parks & Recreation festival (1–7 p.m.) celebrates African and African American heritage through live music, dance, vendors, and community programming. One of the longest-running cultural festivals in the Southeast and a quintessential Durham experience."
     },
     {
-      "title": "Marbles Family Day",
-      "date": "2026-05-23",
-      "location": "Marbles Kids Museum, Raleigh",
-      "category": "Family",
-      "url": null,
-      "summary": "Hands-on activities and special programming for families with kids ages 0–10."
-    },
-    {
-      "title": "Eno River Guided Hike",
-      "date": "2026-06-06",
-      "location": "Eno River State Park, Durham",
-      "category": "Outdoor",
-      "url": null,
-      "summary": "Ranger-led hike through one of the Triangle's best preserved river ecosystems — great for transplants who want to see what the local outdoor scene looks like."
-    },
-    {
-      "title": "Triangle AI Tinkerers Demo Night",
-      "date": "2026-06-11",
-      "location": "American Underground, Durham",
-      "category": "Tech",
-      "url": null,
-      "summary": "Builder-focused AI meetup with live demos — popular with the local startup and ML engineering community."
-    },
-    {
-      "title": "RTP Frontier Networking Mixer",
-      "date": "2026-06-18",
-      "location": "Frontier RTP",
+      "title": "AMA Triangle Monthly Mixer — May",
+      "date": "2026-05-19",
+      "location": "Fortnight Brewing Company, Cary",
       "category": "Networking",
-      "url": null,
-      "summary": "Recurring informal gathering for RTP-area tech professionals — accessible to transplants and easy to attend solo."
+      "url": "https://amatriangle.org/events-programs/",
+      "summary": "The American Marketing Association's Triangle chapter hosts a casual after-work mixer (5:30–7:30 p.m.) at Fortnight Brewing in Cary, open to marketers, entrepreneurs, and business professionals at all career levels. A relaxed way to start building a professional network in the Triangle."
+    },
+    {
+      "title": "Animazement",
+      "date": "2026-05-22",
+      "location": "Raleigh Convention Center, Raleigh",
+      "category": "Cultural",
+      "url": "https://animazement.com/",
+      "summary": "A three-day (May 22–24) Japanese animation and pop-culture convention drawing roughly 15,000 attendees over Memorial Day weekend to the Raleigh Convention Center. Whether you're a fan of anime or just curious, the cosplay spectacle and dealers' hall alone are worth the trip."
+    },
+    {
+      "title": "The Market at NCMA",
+      "date": "2026-06-06",
+      "location": "NC Museum of Art, Raleigh",
+      "category": "Family",
+      "url": "https://www.trianglepopup.com/",
+      "summary": "A curated outdoor pop-up market on the grounds of the North Carolina Museum of Art, running 11 a.m. to 4 p.m. with local artisan vendors — free to browse, with the museum's permanent collection and park trails right next door for a full family outing."
+    },
+    {
+      "title": "AMA Triangle Monthly Mixer — June",
+      "date": "2026-06-10",
+      "location": "Trophy Brewing, Raleigh",
+      "category": "Networking",
+      "url": "https://amatriangle.org/events-programs/",
+      "summary": "The Triangle chapter of the American Marketing Association gathers again (5:30–7:30 p.m.) at Trophy Brewing in Raleigh for a second round of professional networking in a casual taproom setting. A solid option for transplants who missed the May event or want to deepen new connections."
     }
   ]
 }
