@@ -130,6 +130,10 @@ export default function Home() {
                 title: 'Community connection',
                 body: 'We connect you to desired communities and provide information about various business and community events.',
               },
+              {
+                title: 'Property management',
+                body: 'If you own a property, we can manage it for you—including coordinating repairs and regular inspections.',
+              },
             ].map((item) => (
               <li
                 key={item.title}
