@@ -3,8 +3,10 @@ import Calculator from "@/components/Calculator";
 import NickBio from "@/components/NickBio";
 import CommuteMap from "@/components/CommuteMap";
 import ModalTriggerButton from "@/components/ModalTriggerButton";
+import { getUpcomingEvents, formatDateLabel } from "@/data/events";
 
 export default function Home() {
+  const upcomingEvents = getUpcomingEvents(3);
   return (
     <div className="min-h-screen bg-black font-sans text-zinc-50 selection:bg-blue-500/30">
       {/* Navigation */}
@@ -146,22 +148,30 @@ export default function Home() {
             </button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { date: "APR 20", title: "RTP Slavic Tech Meetup", loc: "Frontier RTP", tag: "Networking" },
-              { date: "MAY 05", title: "Cary Dragon Boat Festival", loc: "Bond Park", tag: "Cultural" },
-              { date: "MAY 12", title: "Next.js RDU Workshop", loc: "Red Hat Annex", tag: "Tech" },
-            ].map((event) => (
-              <div key={event.title} className="p-8 bg-white/10 rounded-3xl border border-white/20 backdrop-blur-md hover:bg-white/20 transition-all cursor-pointer">
-                <div className="text-blue-200 text-xs font-black mb-3 uppercase tracking-[0.2em]">{event.date}</div>
-                <h4 className="text-2xl font-black mb-6 leading-tight">{event.title}</h4>
-                <div className="flex items-center justify-between">
-                  <span className="text-sm text-blue-100 font-bold tracking-tight">📍 {event.loc}</span>
-                  <span className="px-3 py-1 bg-white/20 rounded-lg text-[10px] font-black uppercase tracking-widest">{event.tag}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+          {upcomingEvents.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {upcomingEvents.map((event) => (
+                <a
+                  key={`${event.date}-${event.title}`}
+                  href={event.url ?? undefined}
+                  target={event.url ? "_blank" : undefined}
+                  rel={event.url ? "noopener noreferrer" : undefined}
+                  className="p-8 bg-white/10 rounded-3xl border border-white/20 backdrop-blur-md hover:bg-white/20 transition-all cursor-pointer block"
+                >
+                  <div className="text-blue-200 text-xs font-black mb-3 uppercase tracking-[0.2em]">{formatDateLabel(event.date)}</div>
+                  <h4 className="text-2xl font-black mb-6 leading-tight">{event.title}</h4>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-blue-100 font-bold tracking-tight">📍 {event.location}</span>
+                    <span className="px-3 py-1 bg-white/20 rounded-lg text-[10px] font-black uppercase tracking-widest">{event.category}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <p className="text-blue-100 text-lg font-medium">
+              The calendar refreshes weekly — check back Monday for the next set of events.
+            </p>
+          )}
         </div>
       </section>
 

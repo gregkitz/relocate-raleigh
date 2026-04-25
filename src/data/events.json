@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-04-25T13:00:00Z",
+  "events": [
+    {
+      "title": "First Friday Raleigh",
+      "date": "2026-05-01",
+      "location": "Downtown Raleigh",
+      "category": "Cultural",
+      "url": null,
+      "summary": "Monthly art walk and gallery night across downtown Raleigh — a low-key way to meet locals and see the arts scene."
+    },
+    {
+      "title": "TechFest North Carolina",
+      "date": "2026-05-13",
+      "location": "Raleigh Convention Center",
+      "category": "Tech",
+      "url": null,
+      "summary": "Two-day regional tech conference covering software, AI, and infrastructure — strong RTP networking surface."
+    },
+    {
+      "title": "Bimbé Cultural Arts Festival",
+      "date": "2026-05-16",
+      "location": "Durham Central Park",
+      "category": "Cultural",
+      "url": null,
+      "summary": "Annual celebration of African and African-American arts, music, and food in downtown Durham."
+    },
+    {
+      "title": "Marbles Family Day",
+      "date": "2026-05-23",
+      "location": "Marbles Kids Museum, Raleigh",
+      "category": "Family",
+      "url": null,
+      "summary": "Hands-on activities and special programming for families with kids ages 0–10."
+    },
+    {
+      "title": "Eno River Guided Hike",
+      "date": "2026-06-06",
+      "location": "Eno River State Park, Durham",
+      "category": "Outdoor",
+      "url": null,
+      "summary": "Ranger-led hike through one of the Triangle's best preserved river ecosystems — great for transplants who want to see what the local outdoor scene looks like."
+    },
+    {
+      "title": "Triangle AI Tinkerers Demo Night",
+      "date": "2026-06-11",
+      "location": "American Underground, Durham",
+      "category": "Tech",
+      "url": null,
+      "summary": "Builder-focused AI meetup with live demos — popular with the local startup and ML engineering community."
+    },
+    {
+      "title": "RTP Frontier Networking Mixer",
+      "date": "2026-06-18",
+      "location": "Frontier RTP",
+      "category": "Networking",
+      "url": null,
+      "summary": "Recurring informal gathering for RTP-area tech professionals — accessible to transplants and easy to attend solo."
+    }
+  ]
+}
