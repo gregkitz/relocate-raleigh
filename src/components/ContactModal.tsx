@@ -144,6 +144,17 @@ export default function ContactModal({
                   ? 'Send me the guide'
                   : 'Send message'}
             </button>
+            {variant !== 'guide' && (
+              <p className="pt-2 text-center text-sm font-medium text-zinc-500">
+                Or call Nick by phone number{' '}
+                <a
+                  href="tel:+13477579850"
+                  className="font-bold text-blue-400 underline-offset-2 hover:text-blue-300 hover:underline"
+                >
+                  +13477579850
+                </a>
+              </p>
+            )}
           </form>
         )}
       </div>

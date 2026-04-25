@@ -96,6 +96,54 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="how-we-help" className="border-y border-zinc-900 bg-black py-32 px-6">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 max-w-3xl">
+            <h2 className="mb-6 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl">
+              How we can help you
+            </h2>
+            <p className="text-xl font-medium leading-relaxed text-zinc-500">
+              From housing to community—practical support for your Triangle relocation.
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {[
+              {
+                title: 'Find your ideal home',
+                body: 'We help you find a house for rent or purchase in the area most suitable for you and your family.',
+              },
+              {
+                title: 'Mortgage assistance',
+                body: 'We connect you with the best mortgage brokers in the area.',
+              },
+              {
+                title: 'Organize moving logistics',
+                body: 'We manage the details of your move to ensure a smooth transition.',
+              },
+              {
+                title: 'Expert local guidance',
+                body: 'We answer your questions regarding neighborhoods, schools, career opportunities, and more.',
+              },
+              {
+                title: 'Community connection',
+                body: 'We connect you to desired communities and provide information about various business and community events.',
+              },
+            ].map((item) => (
+              <li
+                key={item.title}
+                className="rounded-[2rem] border border-zinc-800/80 bg-zinc-900/40 p-8 transition-colors hover:border-blue-500/25"
+              >
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-2 w-2 shrink-0 rounded-full bg-blue-500" aria-hidden />
+                  <h3 className="text-lg font-black tracking-tight text-white md:text-xl">{item.title}</h3>
+                </div>
+                <p className="text-base font-medium leading-relaxed text-zinc-400">{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Infrastructure Section */}
       <section id="infrastructure" className="py-32 px-6 max-w-7xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-24 items-center">
