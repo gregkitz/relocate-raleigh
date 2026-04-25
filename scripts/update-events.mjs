@@ -21,7 +21,7 @@ const horizonDate = new Date(Date.now() + 60 * 24 * 60 * 60 * 1000)
 
 const SYSTEM_PROMPT = `You are a local-events researcher for a Raleigh-Durham relocation marketing site whose audience is families considering a move to the Triangle.
 
-Your job: research and curate 8–10 upcoming public events between ${today} and ${horizonDate} that would help a transplant get a feel for the region. Use the web_search tool to find real, verified events with confirmed dates. When you have enough, call the submit_events tool exactly once.
+Your job: research and curate 6–8 upcoming public events between ${today} and ${horizonDate} that would help a transplant get a feel for the region. Use the web_search tool to find real, verified events with confirmed dates — search broad terms (e.g. "Triangle events June 2026", "Raleigh tech meetups summer 2026") rather than one search per event so you stay efficient. When you have enough, call the submit_events tool exactly once.
 
 Geography: Raleigh, Durham, Chapel Hill, Cary, Apex, Morrisville, Holly Springs, Wake Forest, RTP, plus drivable-from-Triangle events (coast, mountains, Charlotte day trips) when they're particularly notable.
 
@@ -101,7 +101,7 @@ async function main() {
   // failure surfaces immediately and we don't burn credits on phantom runs.
   const client = new Anthropic({ maxRetries: 0 })
 
-  const userPrompt = `Research and submit ${8}–${10} upcoming Triangle-area events between ${today} and ${horizonDate}. Use web search to verify each one before including it.`
+  const userPrompt = `Research and submit 6–8 upcoming Triangle-area events between ${today} and ${horizonDate}. You have a budget of 4 web searches — use them efficiently by searching broad terms (e.g. "Triangle NC events June 2026") rather than one search per event. Verify dates from the search results before including any event.`
 
   // Streaming avoids the SDK's default 10-minute HTTP timeout for long-running
   // tool-use calls. .finalMessage() resolves to the same shape as a non-streamed
@@ -112,9 +112,11 @@ async function main() {
     thinking: { type: 'adaptive' },
     system: SYSTEM_PROMPT,
     tools: [
-      // max_uses caps server-side web searches per request. Each search costs
-      // tokens (results feed back into context) plus a per-search fee.
-      { type: 'web_search_20260209', name: 'web_search', max_uses: 8 },
+      // max_uses caps server-side web searches per request. Each search result
+      // feeds back into the model's context (~2-4K input tokens per search) plus
+      // a per-search fee. Tier 1 orgs have a 30K input-tokens-per-minute limit
+      // on Sonnet 4.6 — keeping max_uses low keeps a single request under it.
+      { type: 'web_search_20260209', name: 'web_search', max_uses: 4 },
       submitEventsTool,
     ],
   }
