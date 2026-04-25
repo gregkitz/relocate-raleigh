@@ -119,6 +119,11 @@ async function main() {
   let response = await client.messages.stream({ ...baseParams, messages }).finalMessage()
   console.log(`Initial pass done: stop_reason=${response.stop_reason}`)
 
+  // web_search_20260209 uses dynamic filtering, which provisions a server-side
+  // code execution container. On pause_turn continuations, we must pass the
+  // same container_id so Claude can resume in the existing container.
+  let containerId = response.container?.id ?? null
+
   // The web_search tool runs server-side. If it hits its iteration cap before
   // Claude calls submit_events, the API returns stop_reason="pause_turn" and
   // expects us to re-send the assistant turn so it can continue.
@@ -126,7 +131,10 @@ async function main() {
   while (response.stop_reason === 'pause_turn' && safetyCounter < 3) {
     console.log(`pause_turn — continuing (round ${safetyCounter + 1})...`)
     messages.push({ role: 'assistant', content: response.content })
-    response = await client.messages.stream({ ...baseParams, messages }).finalMessage()
+    const params = { ...baseParams, messages }
+    if (containerId) params.container = containerId
+    response = await client.messages.stream(params).finalMessage()
+    if (response.container?.id) containerId = response.container.id
     safetyCounter += 1
   }
 
