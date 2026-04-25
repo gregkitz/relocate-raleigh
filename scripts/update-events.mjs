@@ -177,6 +177,22 @@ async function main() {
 }
 
 main().catch((err) => {
+  if (err instanceof Anthropic.RateLimitError) {
+    const retryAfter = err.headers?.get('retry-after')
+    const reset = err.headers?.get('anthropic-ratelimit-input-tokens-reset')
+    console.error('\n=== Rate limited ===')
+    console.error(`Org: tier 1 (30K input tokens/min on Sonnet 4.6)`)
+    if (retryAfter) {
+      const minutes = Math.ceil(Number(retryAfter) / 60)
+      console.error(`Retry-After: ${retryAfter}s (~${minutes} min)`)
+    }
+    if (reset) console.error(`Bucket resets at: ${reset}`)
+    console.error(
+      `\nWait until the reset time, then re-trigger. Don't retry immediately —`,
+    )
+    console.error(`each attempt while empty pushes the reset further out.\n`)
+    process.exit(1)
+  }
   console.error('update-events failed:', err)
   process.exit(1)
 })
