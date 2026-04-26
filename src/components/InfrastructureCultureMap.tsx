@@ -171,10 +171,10 @@ export default function InfrastructureCultureMap() {
   const selectedStore = stores.find((s) => s.id === selectedId) ?? null;
 
   return (
-    <div className="w-full overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900 shadow-2xl">
+    <div className="w-full overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900 shadow-2xl ring-1 ring-blue-500/15">
       <div className="border-b border-zinc-800 bg-zinc-900/50 p-6 backdrop-blur-sm md:p-8">
-        <h3 className="mb-2 text-xl font-black uppercase tracking-tight text-white">
-          Specialty groceries by community
+        <h3 className="mb-2 text-2xl font-black uppercase tracking-tight text-white md:text-3xl">
+          Triangle specialty groceries
         </h3>
         <p className="mb-6 text-sm font-medium text-zinc-500">
           Pick a group to see Triangle-area examples. Click a row or a map pin to focus a store.

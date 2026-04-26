@@ -151,15 +151,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Infrastructure Section */}
-      <section id="infrastructure" className="py-32 px-6 max-w-7xl mx-auto space-y-20">
-        <div className="max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-6">The &quot;Hidden&quot; Infrastructure</h2>
+      {/* Infrastructure Section — store explorer is the primary change here */}
+      <section
+        id="infrastructure"
+        className="scroll-mt-24 py-32 px-6 max-w-7xl mx-auto space-y-10"
+      >
+        <div className="max-w-3xl space-y-4">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white">
+            The &quot;Hidden&quot; Infrastructure
+          </h2>
+          <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-400">
+            Specialty grocers · Slavic, Asian, Indian, American
+          </p>
           <p className="text-xl text-zinc-500 leading-relaxed font-medium">
-            Beyond school rankings and home prices, Raleigh has specialty grocers, food halls, and corridors that make the Triangle feel like home—plus the everyday commute tradeoffs worth mapping.
+            Use the tabs below to browse example Triangle stores by community, click a row or map pin for details,
+            then scroll to the commute tool to weigh drive time against neighborhood cost.
           </p>
         </div>
-        <InfrastructureCultureMap />
+        <div id="infrastructure-grocers" className="scroll-mt-8">
+          <InfrastructureCultureMap />
+        </div>
         <CommuteMap />
       </section>
 
