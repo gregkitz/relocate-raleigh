@@ -3,6 +3,7 @@ import Link from "next/link";
 import Calculator from "@/components/Calculator";
 import NickBio from "@/components/NickBio";
 import CommuteMap from "@/components/CommuteMap";
+import InfrastructureCultureMap from "@/components/InfrastructureCultureMap";
 import ModalTriggerButton from "@/components/ModalTriggerButton";
 import { getUpcomingEvents, formatDateLabel } from "@/data/events";
 
@@ -151,38 +152,15 @@ export default function Home() {
       </section>
 
       {/* Infrastructure Section */}
-      <section id="infrastructure" className="py-32 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-24 items-center">
-          <div className="flex-1 space-y-10">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-6">The "Hidden" Infrastructure</h2>
-              <p className="text-xl text-zinc-500 leading-relaxed font-medium">
-                Beyond school rankings and home prices, Raleigh has a hidden layer of infrastructure that makes it feel like home.
-              </p>
-            </div>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { title: "Grand Asia Market", desc: "Authentic groceries and local food hub.", icon: "🍜" },
-                { title: "Golden Hex", desc: "Premier Eastern European market.", icon: "🍞" },
-                { title: "RTP Corridor", desc: "Cisco, Red Hat, Apple, and Epic Games.", icon: "💻" },
-                { title: "Wake County Schools", desc: "Ranked among the best in the Southeast.", icon: "🏫" },
-              ].map((item) => (
-                <li key={item.title} className="flex gap-5 group">
-                  <div className="w-14 h-14 shrink-0 bg-zinc-900 rounded-2xl flex items-center justify-center text-2xl border border-zinc-800 group-hover:bg-blue-600/10 group-hover:border-blue-500/30 transition-all">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-black text-white text-lg">{item.title}</h4>
-                    <p className="text-sm text-zinc-500 font-medium leading-relaxed">{item.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex-1 w-full flex justify-center lg:justify-end">
-            <CommuteMap />
-          </div>
+      <section id="infrastructure" className="py-32 px-6 max-w-7xl mx-auto space-y-20">
+        <div className="max-w-3xl">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white mb-6">The &quot;Hidden&quot; Infrastructure</h2>
+          <p className="text-xl text-zinc-500 leading-relaxed font-medium">
+            Beyond school rankings and home prices, Raleigh has specialty grocers, food halls, and corridors that make the Triangle feel like home—plus the everyday commute tradeoffs worth mapping.
+          </p>
         </div>
+        <InfrastructureCultureMap />
+        <CommuteMap />
       </section>
 
       {/* Events Section */}
