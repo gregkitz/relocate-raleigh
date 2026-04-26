@@ -2,6 +2,7 @@
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { SHARED_GOOGLE_MAPS_LOADER_ID } from '@/lib/googleMapsLoaderId';
 import {
   CULTURE_STORES,
   CULTURE_TABS,
@@ -54,7 +55,7 @@ function CultureStoresGoogleMap({
   const mapRef = useRef<google.maps.Map | null>(null);
 
   const { isLoaded, loadError } = useJsApiLoader({
-    id: 'culture-infrastructure-map',
+    id: SHARED_GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: apiKey,
   });
 

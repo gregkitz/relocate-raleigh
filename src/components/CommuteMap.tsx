@@ -2,6 +2,7 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { SHARED_GOOGLE_MAPS_LOADER_ID } from '@/lib/googleMapsLoaderId';
 
 type Employer = {
   id: string;
@@ -80,7 +81,7 @@ function GoogleMapPanel({ selectedEmployer, reachableNeighborhoods, maxCommute }
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY?.trim() ?? '';
 
   const { isLoaded, loadError } = useJsApiLoader({
-    id: 'commute-optimizer-map',
+    id: SHARED_GOOGLE_MAPS_LOADER_ID,
     googleMapsApiKey: apiKey,
   });
 
