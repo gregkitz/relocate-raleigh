@@ -151,27 +151,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Infrastructure Section — store explorer is the primary change here */}
+      {/* Infrastructure: commute tool first, then specialty grocers */}
       <section
         id="infrastructure"
-        className="scroll-mt-24 py-32 px-6 max-w-7xl mx-auto space-y-10"
+        className="scroll-mt-24 py-32 px-6 max-w-7xl mx-auto space-y-20"
       >
-        <div className="max-w-3xl space-y-4">
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white">
-            The &quot;Hidden&quot; Infrastructure
-          </h2>
-          <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-400">
-            Specialty grocers · Slavic, Asian, Indian, American
-          </p>
-          <p className="text-xl text-zinc-500 leading-relaxed font-medium">
-            Use the tabs below to browse example Triangle stores by community, click a row or map pin for details,
-            then scroll to the commute tool to weigh drive time against neighborhood cost.
-          </p>
+        <div className="space-y-10">
+          <div className="max-w-3xl space-y-4">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white">
+              Commute vs. neighborhood cost
+            </h2>
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-400">
+              Major Triangle tech employers · illustrative drive times
+            </p>
+            <p className="text-xl text-zinc-500 leading-relaxed font-medium">
+              Choose one of fifteen large tech campuses around RTP, Raleigh, Durham, Cary, or Morrisville. The map
+              recenters on that employer; blue pins show example neighborhoods whose rough drive-time estimate falls
+              under your max commute slider. Median home prices and school notes are simplified—use them as a
+              conversation starter, not a quote.
+            </p>
+          </div>
+          <div id="commute-tool" className="scroll-mt-8">
+            <CommuteMap />
+          </div>
         </div>
-        <div id="infrastructure-grocers" className="scroll-mt-8">
-          <InfrastructureCultureMap />
+
+        <div className="space-y-10 border-t border-zinc-800 pt-20">
+          <div className="max-w-3xl space-y-4">
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white">
+              The &quot;Hidden&quot; Infrastructure
+            </h2>
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-blue-400">
+              Specialty grocers · Slavic, Asian, Indian, American
+            </p>
+            <p className="text-xl text-zinc-500 leading-relaxed font-medium">
+              Use the tabs below to browse example Triangle stores by community and click a row or map pin for
+              details. Pins are approximate; confirm addresses before you visit.
+            </p>
+          </div>
+          <div id="infrastructure-grocers" className="scroll-mt-8">
+            <InfrastructureCultureMap />
+          </div>
         </div>
-        <CommuteMap />
       </section>
 
       {/* Events Section */}

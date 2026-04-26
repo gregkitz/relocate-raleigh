@@ -2,14 +2,12 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import {
+  COMMUTE_EMPLOYERS,
+  COMMUTE_EMPLOYER_XY,
+  type CommuteEmployer,
+} from '@/data/commuteEmployers';
 import { SHARED_GOOGLE_MAPS_LOADER_ID } from '@/lib/googleMapsLoaderId';
-
-type Employer = {
-  id: string;
-  name: string;
-  lat: number;
-  lng: number;
-};
 
 type Neighborhood = {
   name: string;
@@ -18,13 +16,6 @@ type Neighborhood = {
   lat: number;
   lng: number;
 };
-
-const EMPLOYERS: Employer[] = [
-  { id: 'cisco', name: 'Cisco / RTP', lat: 35.9005, lng: -78.838 },
-  { id: 'redhat', name: 'Red Hat / DT Raleigh', lat: 35.7719, lng: -78.6389 },
-  { id: 'epic', name: 'Epic Games / Cary', lat: 35.7845, lng: -78.7868 },
-  { id: 'apple', name: 'Apple / RTP', lat: 35.9055, lng: -78.844 },
-];
 
 const NEIGHBORHOODS: Neighborhood[] = [
   { name: 'West Cary', price: 750_000, schools: '10/10', lat: 35.8031, lng: -78.8789 },
@@ -54,7 +45,7 @@ function estimateCommuteMinutes(km: number): number {
   return Math.min(90, Math.max(8, Math.round(minutes)));
 }
 
-function useReachable(selectedEmployer: Employer) {
+function useReachable(selectedEmployer: CommuteEmployer) {
   return useMemo(() => {
     return NEIGHBORHOODS.map((n) => {
       const km = haversineKm(selectedEmployer.lat, selectedEmployer.lng, n.lat, n.lng);
@@ -67,7 +58,7 @@ function useReachable(selectedEmployer: Employer) {
 const triangleCenter = { lat: 35.82, lng: -78.78 };
 
 type MapPanelProps = {
-  selectedEmployer: Employer;
+  selectedEmployer: CommuteEmployer;
   reachableNeighborhoods: Array<Neighborhood & { commuteTime: number }>;
   maxCommute: number;
 };
@@ -188,7 +179,7 @@ function SvgFallbackMap({
   reachableNeighborhoods,
   maxCommute,
 }: {
-  selectedEmployer: Employer & { x: number; y: number };
+  selectedEmployer: CommuteEmployer & { x: number; y: number };
   reachableNeighborhoods: Array<Neighborhood & { commuteTime: number; x: number; y: number }>;
   maxCommute: number;
 }) {
@@ -253,14 +244,6 @@ function SvgFallbackMap({
   );
 }
 
-/** Map abstract x/y for SVG fallback (aligned to Triangle layout). */
-const EMPLOYER_XY: Record<string, { x: number; y: number }> = {
-  cisco: { x: 40, y: 40 },
-  redhat: { x: 80, y: 60 },
-  epic: { x: 50, y: 60 },
-  apple: { x: 35, y: 35 },
-};
-
 const NEIGHBORHOOD_XY: Record<string, { x: number; y: number }> = {
   'West Cary': { x: 42, y: 48 },
   Apex: { x: 38, y: 68 },
@@ -273,22 +256,26 @@ const NEIGHBORHOOD_XY: Record<string, { x: number; y: number }> = {
 };
 
 export default function CommuteMap() {
-  const [selectedEmployer, setSelectedEmployer] = useState<Employer>(EMPLOYERS[0]);
+  const [selectedEmployer, setSelectedEmployer] = useState<CommuteEmployer>(COMMUTE_EMPLOYERS[0]);
   const [maxCommute, setMaxCommute] = useState(25);
   const hasMapsKey = Boolean(process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY?.trim());
 
   const reachableNeighborhoods = useReachable(selectedEmployer);
 
-  const fallbackEmployer = { ...selectedEmployer, ...EMPLOYER_XY[selectedEmployer.id] };
+  const employerFallbackXY =
+    COMMUTE_EMPLOYER_XY[selectedEmployer.id] ?? ({ x: 50, y: 50 } as const);
+  const fallbackEmployer = { ...selectedEmployer, ...employerFallbackXY };
   const fallbackNeighborhoods = reachableNeighborhoods.map((n) => ({
     ...n,
     ...NEIGHBORHOOD_XY[n.name],
   }));
 
   return (
-    <div className="flex w-full flex-col overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900 shadow-2xl">
+    <div className="flex w-full flex-col overflow-hidden rounded-[2.5rem] border border-zinc-800 bg-zinc-900 shadow-2xl ring-1 ring-blue-500/15">
       <div className="border-b border-zinc-800 bg-zinc-900/50 p-8 backdrop-blur-sm">
-        <h3 className="mb-2 text-xl font-black uppercase tracking-tight text-white">Commute vs. Cost Optimizer</h3>
+        <h3 className="mb-6 text-2xl font-black uppercase tracking-tight text-white md:text-3xl">
+          Commute vs. Cost Optimizer
+        </h3>
         {!hasMapsKey && (
           <p className="mb-6 text-xs font-medium text-zinc-500">
             Add <code className="text-zinc-400">NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</code> to{' '}
@@ -300,15 +287,15 @@ export default function CommuteMap() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="space-y-4">
             <label className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
-              Target Employer
+              Tech campus (15 employers)
             </label>
-            <div className="grid grid-cols-2 gap-2">
-              {EMPLOYERS.map((emp) => (
+            <div className="grid max-h-[220px] grid-cols-2 gap-2 overflow-y-auto pr-1 sm:max-h-[260px] sm:grid-cols-3 sm:pr-0 md:max-h-none lg:grid-cols-5">
+              {COMMUTE_EMPLOYERS.map((emp) => (
                 <button
                   key={emp.id}
                   type="button"
                   onClick={() => setSelectedEmployer(emp)}
-                  className={`rounded-xl border px-3 py-2 text-xs font-bold transition-all ${
+                  className={`rounded-xl border px-2 py-2 text-left text-[11px] font-bold leading-snug transition-all ${
                     selectedEmployer.id === emp.id
                       ? 'border-blue-500 bg-blue-600 text-white shadow-lg shadow-blue-500/20'
                       : 'border-zinc-700 bg-zinc-800 text-zinc-400 hover:border-zinc-600'
