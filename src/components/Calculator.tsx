@@ -13,10 +13,15 @@ import {
 const DEFAULT_STATE: StateCode = 'WA';
 
 export default function Calculator() {
-  const [salary, setSalary] = useState(200_000);
+  const [salaryInput, setSalaryInput] = useState('200000');
   const [stateCode, setStateCode] = useState<StateCode>(DEFAULT_STATE);
 
   const origin = US_STATE_DATA[stateCode];
+  const salary = useMemo(() => {
+    if (!salaryInput) return 0;
+    const n = Number.parseInt(salaryInput, 10);
+    return Number.isFinite(n) ? Math.max(0, n) : 0;
+  }, [salaryInput]);
 
   const raleighEquivalent = useMemo(
     () =>
@@ -62,10 +67,19 @@ export default function Calculator() {
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500">$</span>
               <input
-                type="number"
-                min={0}
-                value={salary}
-                onChange={(e) => setSalary(Number(e.target.value))}
+                type="text"
+                inputMode="numeric"
+                autoComplete="off"
+                value={salaryInput}
+                onChange={(e) => {
+                  const next = e.target.value.replace(/[^\d]/g, '');
+                  setSalaryInput(next);
+                }}
+                onBlur={() => {
+                  if (!salaryInput) return;
+                  const normalized = String(Number.parseInt(salaryInput, 10) || 0);
+                  setSalaryInput(normalized);
+                }}
                 className="w-full pl-8 pr-4 py-3 bg-zinc-800 border border-zinc-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-zinc-100 transition-all"
               />
             </div>

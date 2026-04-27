@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import ModalTriggerButton from './ModalTriggerButton';
 
 export default function NickBio() {
@@ -7,9 +8,15 @@ export default function NickBio() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-16 items-start">
           <div className="space-y-6">
-            <div className="aspect-[4/5] rounded-3xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-700 relative overflow-hidden group">
-              <span className="text-xs uppercase tracking-widest font-bold opacity-50 group-hover:opacity-100 transition-opacity">Photo Placeholder</span>
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
+            <div className="aspect-[4/5] rounded-3xl bg-zinc-900 border border-zinc-800 relative overflow-hidden">
+              <Image
+                src="/nick-photo-placeholder.png"
+                alt="Relocate Raleigh clients in front of a sold home"
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent" />
             </div>
             <div className="p-6 bg-zinc-900/50 rounded-2xl border border-zinc-800">
               <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-4">Team Credentials</p>
@@ -37,7 +44,7 @@ export default function NickBio() {
           <div className="space-y-8">
             <div>
               <p className="text-blue-500 text-sm font-bold tracking-[0.2em] uppercase mb-4">
-                Your local, not your realtor
+                Your local, and your realtor
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
                 I made the move. <br />
