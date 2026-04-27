@@ -1,69 +1,69 @@
 {
-  "generatedAt": "2026-04-25T20:25:39.974Z",
+  "generatedAt": "2026-04-27T13:41:43.814Z",
   "events": [
     {
       "title": "Triangle Pop-Up at Raleigh Iron Works",
       "date": "2026-05-09",
       "location": "Raleigh Iron Works, Raleigh",
-      "category": "Family",
+      "category": "Cultural",
       "url": "https://www.trianglepopup.com/events",
-      "summary": "A monthly pop-up market on the second Saturday of each month featuring a rotating roster of local makers, artisans, and live music from 11 a.m. to 4 p.m. A low-key, all-ages way to discover local makers and the Raleigh creative community in a converted industrial space."
+      "summary": "Monthly outdoor market at Raleigh Iron Works spotlighting a rotating roster of local makers, crafters, and artisans alongside live music. Free to browse and a low-key way to discover the Triangle's creative community."
     },
     {
-      "title": "Live After 5 Outdoor Concert Series",
+      "title": "Live After 5 Free Concert Series – Opening Night",
       "date": "2026-05-14",
-      "location": "Moore Square / Raleigh Union Station / Seaboard Station, Raleigh",
+      "location": "Moore Square / Seaboard Station, Raleigh",
       "category": "Outdoor",
-      "url": "https://triangleonthecheap.com/free-outdoor-summer-concerts-triangle/",
-      "summary": "Free weekly outdoor concerts held six Thursdays from May 14 through August 13, 2026, starting at 7 p.m. at rotating downtown Raleigh venues. A great no-cost way to experience Raleigh's walkable downtown neighborhoods and hear live music with neighbors."
+      "url": null,
+      "summary": "Free Thursday-evening outdoor concerts running six weeks from May through August at Raleigh's most popular public spaces, including Moore Square and Raleigh Union Station. Bring a blanket; food and drinks are available on-site."
     },
     {
       "title": "Got to Be NC Festival",
       "date": "2026-05-15",
       "location": "NC State Fairgrounds, Raleigh",
-      "category": "Cultural",
-      "url": "https://triangleonthecheap.com/got-nc-festival/",
-      "summary": "A free, three-day (May 15–17) celebration of North Carolina food, agriculture, music, and culture held at the State Fairgrounds, with activities for all ages across multiple stages and pavilions. It's one of the best single events for newcomers to taste what makes the state tick."
+      "category": "Family",
+      "url": "https://triangleonthecheap.com/spring-festivals-triangle/",
+      "summary": "Free three-day showcase of North Carolina agriculture, food, music, and culture running Friday through Sunday at the State Fairgrounds. No admission charge, with hands-on activities and vendors suitable for all ages."
     },
     {
-      "title": "Bimbé Cultural Arts Festival",
-      "date": "2026-05-16",
-      "location": "Rock Quarry Park, Durham",
-      "category": "Cultural",
-      "url": "https://www.dprplaymore.org/281/Bimbe-Cultural-Arts-Festival",
-      "summary": "Now in its 56th year, this free Durham Parks & Recreation festival (1–7 p.m.) celebrates African and African American heritage through live music, dance, vendors, and community programming. One of the longest-running cultural festivals in the Southeast and a quintessential Durham experience."
+      "title": "CackalackyCon 2026",
+      "date": "2026-05-15",
+      "location": "DoubleTree by Hilton RTP, Durham",
+      "category": "Tech",
+      "url": "https://cackalackycon.org/",
+      "summary": "Weekend-long nonprofit hacker conference at RTP featuring security talks, capture-the-flag competitions, and hands-on workshops. Open to skill levels from beginner to expert, and a solid entry point into the Triangle's cybersecurity scene."
     },
     {
-      "title": "AMA Triangle Monthly Mixer — May",
+      "title": "AMA Triangle May Happy Hour",
       "date": "2026-05-19",
       "location": "Fortnight Brewing Company, Cary",
       "category": "Networking",
       "url": "https://amatriangle.org/events-programs/",
-      "summary": "The American Marketing Association's Triangle chapter hosts a casual after-work mixer (5:30–7:30 p.m.) at Fortnight Brewing in Cary, open to marketers, entrepreneurs, and business professionals at all career levels. A relaxed way to start building a professional network in the Triangle."
-    },
-    {
-      "title": "Animazement",
-      "date": "2026-05-22",
-      "location": "Raleigh Convention Center, Raleigh",
-      "category": "Cultural",
-      "url": "https://animazement.com/",
-      "summary": "A three-day (May 22–24) Japanese animation and pop-culture convention drawing roughly 15,000 attendees over Memorial Day weekend to the Raleigh Convention Center. Whether you're a fan of anime or just curious, the cosplay spectacle and dealers' hall alone are worth the trip."
+      "summary": "Monthly mixer hosted by the American Marketing Association's Triangle chapter and open to marketing and business professionals of all levels. A casual brewery setting makes it easy for newcomers to start building a local professional network."
     },
     {
       "title": "The Market at NCMA",
       "date": "2026-06-06",
       "location": "NC Museum of Art, Raleigh",
-      "category": "Family",
-      "url": "https://www.trianglepopup.com/",
-      "summary": "A curated outdoor pop-up market on the grounds of the North Carolina Museum of Art, running 11 a.m. to 4 p.m. with local artisan vendors — free to browse, with the museum's permanent collection and park trails right next door for a full family outing."
+      "category": "Cultural",
+      "url": "https://www.trianglepopup.com/events",
+      "summary": "Artisan market held on the beautiful grounds of the NC Museum of Art, pairing local makers with access to the museum's galleries and outdoor art trails. The market itself is free to browse."
     },
     {
-      "title": "AMA Triangle Monthly Mixer — June",
+      "title": "AMA Triangle June Happy Hour",
       "date": "2026-06-10",
       "location": "Trophy Brewing, Raleigh",
       "category": "Networking",
       "url": "https://amatriangle.org/events-programs/",
-      "summary": "The Triangle chapter of the American Marketing Association gathers again (5:30–7:30 p.m.) at Trophy Brewing in Raleigh for a second round of professional networking in a casual taproom setting. A solid option for transplants who missed the May event or want to deepen new connections."
+      "summary": "Monthly professional happy hour run by the Triangle AMA chapter, set in one of Raleigh's most popular craft breweries. Informal and welcoming—ideal for transplants who want to quickly expand their professional circle."
+    },
+    {
+      "title": "Durham Parks Summer Concert Series – Kickoff",
+      "date": "2026-06-13",
+      "location": "Various Durham parks, Durham",
+      "category": "Outdoor",
+      "url": null,
+      "summary": "Free outdoor concerts every 2nd and 4th Saturday of the month from June through August, with food trucks on-site and a rotating lineup of musical acts across Durham's public parks. A relaxed, family-friendly way to explore different Durham neighborhoods."
     }
   ]
 }
