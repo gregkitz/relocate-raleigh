@@ -6,15 +6,15 @@ export default function NickBio() {
   return (
     <section id="guide" className="bg-zinc-950 py-24 px-6 border-t border-zinc-900">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1.8fr] gap-16 items-start">
           <div className="space-y-6">
-            <div className="aspect-[4/5] rounded-3xl bg-zinc-900 border border-zinc-800 relative overflow-hidden">
+            <div className="aspect-[16/11] min-h-[320px] md:min-h-[520px] rounded-3xl bg-black border border-zinc-800 relative overflow-hidden">
               <Image
                 src="/nick-photo-placeholder.png"
                 alt="Relocate Raleigh clients in front of a sold home"
                 fill
                 priority
-                className="object-cover"
+                className="object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent" />
             </div>
