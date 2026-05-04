@@ -1,69 +1,69 @@
 {
-  "generatedAt": "2026-04-27T13:41:43.814Z",
+  "generatedAt": "2026-05-04T14:03:21.304Z",
   "events": [
     {
-      "title": "Triangle Pop-Up at Raleigh Iron Works",
-      "date": "2026-05-09",
-      "location": "Raleigh Iron Works, Raleigh",
-      "category": "Cultural",
-      "url": "https://www.trianglepopup.com/events",
-      "summary": "Monthly outdoor market at Raleigh Iron Works spotlighting a rotating roster of local makers, crafters, and artisans alongside live music. Free to browse and a low-key way to discover the Triangle's creative community."
-    },
-    {
-      "title": "Live After 5 Free Concert Series – Opening Night",
-      "date": "2026-05-14",
-      "location": "Moore Square / Seaboard Station, Raleigh",
-      "category": "Outdoor",
-      "url": null,
-      "summary": "Free Thursday-evening outdoor concerts running six weeks from May through August at Raleigh's most popular public spaces, including Moore Square and Raleigh Union Station. Bring a blanket; food and drinks are available on-site."
-    },
-    {
-      "title": "Got to Be NC Festival",
-      "date": "2026-05-15",
-      "location": "NC State Fairgrounds, Raleigh",
-      "category": "Family",
-      "url": "https://triangleonthecheap.com/spring-festivals-triangle/",
-      "summary": "Free three-day showcase of North Carolina agriculture, food, music, and culture running Friday through Sunday at the State Fairgrounds. No admission charge, with hands-on activities and vendors suitable for all ages."
-    },
-    {
-      "title": "CackalackyCon 2026",
-      "date": "2026-05-15",
-      "location": "DoubleTree by Hilton RTP, Durham",
+      "title": "TechFest North Carolina (Triangle)",
+      "date": "2026-05-13",
+      "location": "Raleigh, NC",
       "category": "Tech",
-      "url": "https://cackalackycon.org/",
-      "summary": "Weekend-long nonprofit hacker conference at RTP featuring security talks, capture-the-flag competitions, and hands-on workshops. Open to skill levels from beginner to expert, and a solid entry point into the Triangle's cybersecurity scene."
+      "url": "https://www.nctech.org/events/index.html",
+      "summary": "NC TECH's annual flagship conference for North Carolina's technology sector, featuring industry speakers, company showcases, and networking across the full Triangle ecosystem. Confirmed May 13, 2026 on the nctech.org events calendar."
     },
     {
-      "title": "AMA Triangle May Happy Hour",
-      "date": "2026-05-19",
-      "location": "Fortnight Brewing Company, Cary",
+      "title": "WomenHack Raleigh",
+      "date": "2026-05-13",
+      "location": "Raleigh, NC",
       "category": "Networking",
-      "url": "https://amatriangle.org/events-programs/",
-      "summary": "Monthly mixer hosted by the American Marketing Association's Triangle chapter and open to marketing and business professionals of all levels. A casual brewery setting makes it easy for newcomers to start building a local professional network."
+      "url": "https://womenhack.com",
+      "summary": "A diversity-focused recruiting event connecting women in tech with Triangle-area hiring managers for networking, resume reviews, and on-the-spot interviews. Confirmed May 13, 2026 on Eventbrite; open to job-seekers and employers alike."
     },
     {
-      "title": "The Market at NCMA",
-      "date": "2026-06-06",
-      "location": "NC Museum of Art, Raleigh",
+      "title": "Artsplosure — The Raleigh Arts Festival",
+      "date": "2026-05-16",
+      "location": "Fayetteville Street, Raleigh",
       "category": "Cultural",
-      "url": "https://www.trianglepopup.com/events",
-      "summary": "Artisan market held on the beautiful grounds of the NC Museum of Art, pairing local makers with access to the museum's galleries and outdoor art trails. The market itself is free to browse."
+      "url": "https://artsplosure.org",
+      "summary": "Raleigh's flagship free outdoor arts festival draws 70,000+ visitors to Fayetteville Street with 170+ juried artists, multiple live music stages, and food vendors. A mainstay of the downtown social calendar every third weekend of May since 1979."
     },
     {
-      "title": "AMA Triangle June Happy Hour",
-      "date": "2026-06-10",
-      "location": "Trophy Brewing, Raleigh",
+      "title": "American Dance Festival",
+      "date": "2026-06-04",
+      "location": "Duke University, Durham",
+      "category": "Cultural",
+      "url": "https://americandancefestival.org",
+      "summary": "One of the world's most prestigious modern dance festivals, hosted at Duke University each June–July for a five-week run featuring internationally acclaimed companies and public workshops. A signature piece of Durham's arts identity since the festival moved here in 1978."
+    },
+    {
+      "title": "First Friday Raleigh",
+      "date": "2026-06-05",
+      "location": "Glenwood South / Warehouse District, Raleigh",
       "category": "Networking",
-      "url": "https://amatriangle.org/events-programs/",
-      "summary": "Monthly professional happy hour run by the Triangle AMA chapter, set in one of Raleigh's most popular craft breweries. Informal and welcoming—ideal for transplants who want to quickly expand their professional circle."
+      "url": "https://raleigharts.org",
+      "summary": "A free monthly evening art walk through Raleigh's arts districts on the first Friday of every month, with gallery openings, food trucks, street performers, and pop-up shops. One of the easiest low-key ways for newcomers to explore downtown and meet locals."
     },
     {
-      "title": "Durham Parks Summer Concert Series – Kickoff",
-      "date": "2026-06-13",
-      "location": "Various Durham parks, Durham",
-      "category": "Outdoor",
+      "title": "Museum of Life and Science — Summer Season",
+      "date": "2026-06-06",
+      "location": "Museum of Life and Science, Durham",
+      "category": "Family",
+      "url": "https://www.lifeandscience.org",
+      "summary": "Durham's 84-acre outdoor science museum ramps up summer programming in early June, with the Butterfly House, Dinosaur Trail, live animal encounters, and adventure play areas ideal for all ages. Extended summer hours and weekly themed activities make it a repeat Triangle family destination."
+    },
+    {
+      "title": "Juneteenth Community Celebrations",
+      "date": "2026-06-19",
+      "location": "Downtown Raleigh and Durham",
+      "category": "Cultural",
       "url": null,
-      "summary": "Free outdoor concerts every 2nd and 4th Saturday of the month from June through August, with food trucks on-site and a rotating lineup of musical acts across Durham's public parks. A relaxed, family-friendly way to explore different Durham neighborhoods."
+      "summary": "Both Raleigh and Durham host free outdoor events every June 19 marking the federal Juneteenth holiday, including cultural performances, art exhibitions, food, and family programming. A meaningful opportunity to engage with the Triangle's vibrant communities and rich history."
+    },
+    {
+      "title": "Eno River Festival (Festival for the Eno)",
+      "date": "2026-07-03",
+      "location": "West Point on the Eno, Durham",
+      "category": "Outdoor",
+      "url": "https://enoriver.org",
+      "summary": "A beloved three-day July 4th weekend festival at West Point on the Eno park, featuring folk, blues, and bluegrass music, artisan crafts, river walks, and local food vendors. Running since 1980, it's widely considered the Triangle's most iconic community outdoor gathering."
     }
   ]
 }
